@@ -9,7 +9,7 @@ const Dashboard = () => {
     const sessionHash = Cookies.get("sessionHash");
 
     if (!sessionHash) {
-      navigate("/"); 
+      navigate("/login"); 
     }
   }, [navigate]);
 

@@ -42,7 +42,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="">
       {/* Display LightButton initially, and LoginForm after click */}
       {!showLogin ? (
         <LightButton onClick={handleButtonClick} />

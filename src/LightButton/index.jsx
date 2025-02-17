@@ -3,6 +3,7 @@ import './LightButton.css'; // Add your CSS styles
 
 const LightButton = ({ onClick }) => {
   return (
+    <div className="start-part">
     <div className="light-button">
       <button className="bt" onClick={onClick}>
         <div className="light-holder">
@@ -18,6 +19,7 @@ const LightButton = ({ onClick }) => {
           <p>Focus</p>
         </div>
       </button>
+    </div>
     </div>
   );
 };
