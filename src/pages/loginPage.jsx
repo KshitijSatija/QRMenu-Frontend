@@ -38,7 +38,7 @@ const LoginForm = () => {
   };
 
   const handleButtonClick = () => {
-    setShowLogin(true); // Trigger the display of LoginForm when button is clicked
+    setShowLogin(true); 
   };
 
   return (

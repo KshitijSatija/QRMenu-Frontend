@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import API from "../api/api"; // Ensure the API import path is correct
+import API from "../api/api"; 
 import { useNavigate } from "react-router-dom";
 
 const RegisterForm = () => {
-  const [step, setStep] = useState(1); // Step 1: Register, Step 2: OTP verification
+  const [step, setStep] = useState(1); 
 
-  // Registration Fields
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -14,16 +13,13 @@ const RegisterForm = () => {
   const [mobileno, setMobileno] = useState("");
   const [dob, setDob] = useState("");
 
-  // OTP Verification Fields
   const [otp, setOtp] = useState("");
 
-  // Error and Success Messages
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
 
   const navigate = useNavigate();
 
-  // Step 1: Send OTP
   const handleSendOTP = async (e) => {
     e.preventDefault();
     setError(null);
@@ -34,14 +30,13 @@ const RegisterForm = () => {
 
       if (response.status === 200) {
         setSuccess("OTP sent to your email. Please check your inbox.");
-        setStep(2); // Move to OTP verification step
+        setStep(2); 
       }
     } catch (err) {
       setError(err.response?.data?.message || "Failed to send OTP. Please try again.");
     }
   };
 
-  // Step 2: Verify OTP and Register
   const handleVerifyOTP = async (e) => {
     e.preventDefault();
     setError(null);
@@ -61,7 +56,7 @@ const RegisterForm = () => {
 
       if (response.status === 201) {
         setSuccess("Registration successful! Redirecting to login...");
-        setTimeout(() => navigate("/login"), 2000); // Redirect after successful registration
+        setTimeout(() => navigate("/login"), 2000); 
       }
     } catch (err) {
       setError(err.response?.data?.message || "OTP verification failed. Please try again.");

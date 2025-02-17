@@ -1,21 +1,19 @@
-/* Ensure the body and html take full height but no global background color */
+
 body, html {
   height: 100%;
   width: 100%;
   margin: 0;
 }
 
-/* Set the background color and centering for the start-part container */
 .start-part {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Take up full viewport height */
-  width: 100vw; /* Take up full viewport width */
-  background-color: #0a0a0a; /* Background color applied only to start-part */
+  height: 100vh; 
+  width: 100vw; 
+  background-color: #0a0a0a; 
 }
 
-/* Light button styling */
 .light-button {
   display: flex;
   justify-content: center;
