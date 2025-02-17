@@ -1,11 +1,16 @@
 import React from "react";
-import LoginForm from "./pages/page";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LoginForm from "./pages/loginPage";
+import Dashboard from "./pages/dashboard";
 
 const App = () => {
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gray-100">
-      <LoginForm />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginForm />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </Router>
   );
 };
 

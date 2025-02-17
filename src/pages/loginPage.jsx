@@ -1,17 +1,40 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import API from "../api/api";
+import Cookies from "js-cookie";
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
+  // ✅ Redirect if user is already logged in
+  useEffect(() => {
+    const sessionHash = Cookies.get("sessionHash");
+    if (sessionHash) {
+      navigate("/dashboard"); // Redirect to dashboard
+    }
+  }, [navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
+
     try {
-      const response = await axios.post("http://localhost:5000/auth/login", { username, password });
-      console.log("Login successful:", response.data);
+      const response = await API.post("/auth/login", { username, password });
+
+      if (response.data.sessionHash) {
+        // Store session hash in cookies
+        Cookies.set("sessionHash", response.data.sessionHash, { expires: 1, secure: true });
+
+        console.log("Login successful:", response.data);
+
+        // Redirect to Dashboard
+        navigate("/dashboard");
+      } else {
+        setError("Session hash missing in response");
+      }
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
     }
