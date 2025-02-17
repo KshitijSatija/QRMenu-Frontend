@@ -9,7 +9,6 @@ const LoginForm = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  // ✅ Redirect if user is already logged in
   useEffect(() => {
     const sessionHash = Cookies.get("sessionHash");
     if (sessionHash) {
