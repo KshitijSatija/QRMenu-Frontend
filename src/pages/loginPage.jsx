@@ -2,19 +2,19 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../api/api";
 import Cookies from "js-cookie";
-import LightButton from "../LightButton"; // Import the LightButton component
+import LightButton from "../LightButton"; 
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
-  const [showLogin, setShowLogin] = useState(false);  // State to manage display of LightButton/LoginForm
+  const [showLogin, setShowLogin] = useState(false);  
   const navigate = useNavigate();
 
   useEffect(() => {
     const sessionHash = Cookies.get("sessionHash");
     if (sessionHash) {
-      navigate("/dashboard"); // Redirect to dashboard if sessionHash is present
+      navigate("/dashboard"); 
     }
   }, [navigate]);
 
