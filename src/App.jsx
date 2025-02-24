@@ -8,6 +8,8 @@ import Dashboard from "./pages/dashboard";
 import Sample from "./pages/sample";
 import Ini from "./pages/dashboard-ini";
 import Navbar from "./components/navbar";
+import Landing from "./pages/landing";
+import NotFound from "./pages/404Page";
 const App = () => {
   return (
     <Router>
@@ -21,6 +23,8 @@ const App = () => {
         <Route path='/sample' element={<Sample/>}/>
         <Route path='/ini' element={<Ini/>}/>
         <Route path='/navbar' element={<Navbar/>}/>
+        <Route path='/landing' element={<Landing/>}/>
+        <Route path="*" element={<NotFound />} />
         
         
       </Routes>

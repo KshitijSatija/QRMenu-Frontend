@@ -14,7 +14,7 @@ const LoginForm = () => {
   useEffect(() => {
     const sessionHash = Cookies.get("sessionHash");
     if (sessionHash) {
-      navigate("/dashboard");
+      navigate("/home");
     }
   }, [navigate]);
 
