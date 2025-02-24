@@ -74,9 +74,7 @@ const NotFound = () => {
         <div className="text_4042">0</div>
         <div className="text_4043">4</div>
       </div>
-      <div className="back_to_home">
-        <Link to="/">Go Back to Home</Link>
-      </div>
+      
     </div>
   );
 };
