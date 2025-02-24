@@ -3,11 +3,11 @@ import { useNavigate, useLocation, Outlet} from "react-router-dom";
 import API from "../api/api"; 
 import Cookies from "js-cookie";
 import { FaSpinner, FaUser, FaBell, FaCog, FaSignOutAlt, FaEdit, FaChartLine, FaCalendar, FaTasks, FaUserCircle } from "react-icons/fa";
+import Logo from "../assets/fbbb.svg";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [username, setUsername] = useState("");
 
@@ -23,7 +23,7 @@ const Navbar = () => {
       try {
         const response = await API.get("/auth/validate-session");
         setUsername(response.data.username);
-        setLoading(false);
+        
       } catch (error) {
         console.error("Session validation failed:", error);
         Cookies.remove("sessionHash");
@@ -44,32 +44,11 @@ const Navbar = () => {
     }
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="flex flex-col items-center space-y-4">
-          <FaSpinner className="animate-spin text-4xl text-blue-600" />
-          <p className="text-gray-600 font-medium">Loading...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="bg-red-100 p-4 rounded-lg">
-          <p className="text-red-600">{error}</p>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-gray-50 flex">
       <div className="w-64 bg-white shadow-lg">
         <div className="p-4">
-          <h2 className="text-2xl font-bold text-blue-600">Focus Bias</h2>
+          <img src={Logo} alt="Focus Bias Logo" className="h-10 w-auto" />
         </div>
         <nav className="mt-6">
           <div className="px-4 space-y-2">
@@ -136,6 +115,7 @@ const Navbar = () => {
               <button className="p-2 rounded-full hover:bg-gray-100">
                 <FaUserCircle className="text-gray-600" />
               </button>
+              
 
               <button
                 onClick={handleLogout}

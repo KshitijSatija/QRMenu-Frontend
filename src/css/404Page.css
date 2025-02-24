@@ -583,3 +583,21 @@
     display: none;
   }
 }
+
+
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(1, 0, 18);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #1c2120;
+
+}
