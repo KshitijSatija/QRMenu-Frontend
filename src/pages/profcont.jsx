@@ -48,51 +48,7 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
-      <div className="w-64 bg-white shadow-lg">
-        <div className="p-4">
-          <h2 className="text-2xl font-bold text-blue-600">Focus Bias</h2>
-        </div>
-        <nav className="mt-6">
-          <div className="px-4 space-y-2">
-            <a href="#" className="flex items-center space-x-2 p-3 rounded-lg bg-blue-50 text-blue-600">
-              <FaUser /> 
-              <span>Profile</span>
-            </a>
-            <a href="#" className="flex items-center space-x-2 p-3 rounded-lg hover:bg-gray-50">
-              <FaChartLine /> 
-              <span>Analytics</span>
-            </a>
-            <a href="#" className="flex items-center space-x-2 p-3 rounded-lg hover:bg-gray-50">
-              <FaCalendar /> 
-              <span>Calendar</span>
-            </a>
-            <a href="#" className="flex items-center space-x-2 p-3 rounded-lg hover:bg-gray-50">
-              <FaTasks /> 
-              <span>Tasks</span>
-            </a>
-          </div>
-        </nav>
-      </div>
-
-      <div className="flex-1">
-        <header className="bg-white shadow-sm">
-          <div className="flex items-center justify-between px-8 py-4">
-            <h1 className="text-2xl font-semibold text-gray-800">My Profile</h1>
-            <div className="flex items-center space-x-4">
-              <button className="p-2 rounded-full hover:bg-gray-100">
-                <FaBell className="text-gray-600" /> 
-              </button>
-              <button className="p-2 rounded-full hover:bg-gray-100">
-                <FaCog className="text-gray-600" /> 
-              </button>
-              <button className="p-2 rounded-full hover:bg-gray-100">
-                <FaSignOutAlt className="text-gray-600" /> 
-              </button>
-            </div>
-          </div>
-        </header>
-
+    
         <main className="p-8">
           <div className="grid grid-cols-12 gap-6">
             <div className="col-span-12 lg:col-span-4">
@@ -169,8 +125,7 @@ const Dashboard = () => {
             </div>
           </div>
         </main>
-      </div>
-    </div>
+    
   );
 };
 
