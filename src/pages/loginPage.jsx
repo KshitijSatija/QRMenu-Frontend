@@ -58,7 +58,7 @@ const LoginForm = () => {
                   Sign in
                 </h3>
                 <p className="text-sm mt-4 text-gray-800">
-                  Don't have an account{" "}
+                  Don't have an account?{" "}
                   <a
                     href="javascript:void(0);"
                     onClick={handleRegisterClick}

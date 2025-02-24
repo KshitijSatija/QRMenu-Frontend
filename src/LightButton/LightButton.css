@@ -82,7 +82,7 @@ body, html {
 }
 
 .light-button button.bt:hover .button-holder svg {
-  fill: rgba(88, 101, 242, 1);
+  fill: rgb(184, 255, 193);
 }
 
 .light-button button.bt:hover .button-holder {
