@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FiUpload, FiTrash2, FiAlertTriangle, FiCheck, FiX } from "react-icons/fi";
 import API from "../api/api";
-
+import profilePlaceholder from "../assets/profile.svg";
 import Cookies from "js-cookie";
 const Navigation = ({ activeTab, setActiveTab }) => {
   const tabs = ["Account", "Notifications", "Billing", "Login Logs"];
@@ -31,15 +31,14 @@ const UserSettings = () => {
   const [activeTab, setActiveTab] = useState("Account");
 
   const [personalInfo, setPersonalInfo] = useState({
-    firstName: "John",
-    lastName: "Doe",
-    email: "john.doe@example.com",
-    username: "johndoe",
-    timezone: "UTC"
+    firstName: "",
+    lastName: "",
+    email: "",
+   
   });
 
   const [avatar, setAvatar] = useState(null);
-  const [avatarPreview, setAvatarPreview] = useState("https://images.unsplash.com/photo-1535713875002-d1d0cf377fde");
+  const [avatarPreview, setAvatarPreview] = useState(profilePlaceholder);
   
 
   const [deleteConfirm, setDeleteConfirm] = useState("");
