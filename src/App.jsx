@@ -13,7 +13,6 @@ import InstaAnalytics from "./pages/instaAnalytics";
 import Calendar from "./pages/calendar";
 import Suggestions from "./pages/suggestions";
 import Dashboard from "./pages/dashboard";
-import SignInLogs from "./pages/signInLogs";
 import UserSettings from "./pages/UserSettings";
 
 const App = () => {
@@ -26,7 +25,7 @@ const App = () => {
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/suggestions" element={<Suggestions />} />
           <Route path="/dashboard" element={<Dashboard/>}/>
-          <Route path="/signlogs" element={<SignInLogs />} />
+         
           <Route path="/settings" element={<UserSettings />} />
         </Route>
         <Route path="/" element={<LoginForm />} />
