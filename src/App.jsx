@@ -13,6 +13,7 @@ import InstaAnalytics from "./pages/instaAnalytics";
 import Calendar from "./pages/calendar";
 import Suggestions from "./pages/suggestions";
 import Dashboard from "./pages/dashboard";
+import SignInLogs from "./pages/signInLogs";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/suggestions" element={<Suggestions />} />
           <Route path="/dashboard" element={<Dashboard/>}/>
+          <Route path="/signlogs" element={<SignInLogs />} />
         </Route>
         <Route path="/" element={<LoginForm />} />
         <Route path="/login" element={<LoginForm />} />
@@ -34,6 +36,8 @@ const App = () => {
         <Route path='/ini' element={<Ini/>}/>
         <Route path='/landing' element={<Landing/>}/>
         <Route path="*" element={<NotFound />} />
+        
+        
         
         
       </Routes>
