@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import API from "../api/api"; // Import API instance
 import { format } from "date-fns";
 import { FaSpinner, FaUser, FaBell, FaCog, FaSignOutAlt, FaEdit, FaChartLine, FaCalendar, FaTasks } from "react-icons/fa";
+import profilePlaceholder from "../assets/profile.svg";
 
 const Dashboard = () => {
   const [userData, setUserData] = useState(null);
@@ -13,6 +14,7 @@ const Dashboard = () => {
       try {
         setLoading(true);
         const response = await API.get("/user/profile"); // Fetch user data
+        console.log(response.data);
         setUserData(response.data);
         setError(null);
       } catch (err) {
@@ -55,12 +57,13 @@ const Dashboard = () => {
               <div className="bg-white rounded-xl shadow-md p-6">
                 <div className="flex flex-col items-center">
                   <div className="relative group">
-                    <img
-                      src={userData?.avatar}
+                  <img
+                      src={userData?.avatar || profilePlaceholder}
                       alt={`${userData?.fullName}'s profile`}
                       className="h-32 w-32 rounded-full border-4 border-blue-500 object-cover"
                       onError={(e) => {
-                        e.target.src = "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9";
+                        e.target.onerror = null; // Prevent infinite loop
+                        e.target.src = profilePlaceholder;
                       }}
                     />
                     <button className="absolute bottom-0 right-0 bg-blue-600 p-2 rounded-full text-white hover:bg-blue-700">
@@ -68,10 +71,10 @@ const Dashboard = () => {
                     </button>
                   </div>
                   <h2 className="mt-4 text-2xl font-bold text-gray-800">
-                    {userData?.fullName}
+                    {userData?.firstName+" "+ userData?.lastName}
                   </h2>
                   <span className="inline-block bg-blue-100 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mt-2">
-                    {userData?.role}
+                    {userData?.role?.charAt(0).toUpperCase() + userData?.role?.slice(1)}
                   </span>
                 </div>
 

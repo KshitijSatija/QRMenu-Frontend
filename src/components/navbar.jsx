@@ -106,15 +106,27 @@ const Navbar = () => {
           <div className="flex items-center justify-between px-8 py-4">
             <h1 className="text-2xl font-semibold text-gray-800">My Profile</h1>
             <div className="flex items-center space-x-4">
-              <button className="p-2 rounded-full hover:bg-gray-100">
+              <button className="p-3 rounded-full hover:bg-gray-100">
                 <FaBell className="text-gray-600" />
               </button>
-              <button className="p-2 rounded-full hover:bg-gray-100">
+              
+              <button
+                onClick={() => navigate("/settings")}
+                className={`flex items-center space-x-2 p-3 rounded-full ${
+                  location.pathname === "/settings" ? "bg-blue-50 text-blue-600" : "hover:bg-gray-100"
+                }`}
+              >
                 <FaCog className="text-gray-600" />
               </button>
-              <button className="p-2 rounded-full hover:bg-gray-100">
+              <button
+                onClick={() => navigate("/profile")}
+                className={`flex items-center space-x-2 p-3 rounded-full ${
+                  location.pathname === "/profile" ? "bg-blue-50 text-blue-600" : "hover:bg-gray-100"
+                }`}
+              >
                 <FaUserCircle className="text-gray-600" />
               </button>
+
               
 
               <button
