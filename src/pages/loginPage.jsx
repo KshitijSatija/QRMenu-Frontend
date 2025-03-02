@@ -12,10 +12,20 @@ const LoginForm = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const sessionHash = Cookies.get("sessionHash");
-    if (sessionHash) {
-      navigate("/home");
-    }
+    const validateSession = async () => {
+      try {
+        const response = await API.get("/auth/validate-session");
+
+        if (response.status === 200) {
+          navigate("/dashboard");
+        }
+      } catch (error) {
+        
+        Cookies.remove("sessionHash");
+      }
+    };
+
+    validateSession();
   }, [navigate]);
 
   const handleSubmit = async (e) => {

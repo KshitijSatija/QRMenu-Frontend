@@ -41,10 +41,10 @@ const UserSettings = () => {
   const [avatarPreview, setAvatarPreview] = useState(profilePlaceholder);
   
 
-  const [deleteConfirm, setDeleteConfirm] = useState("");
+  const [deactivateConfirm, setdeactivateConfirm] = useState("");
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showLogoutModal, setShowLogoutModal] = useState(false);
-  const [agreeToDelete, setAgreeToDelete] = useState(false);
+  const [agreeToDeactivate, setagreeToDeactivate] = useState(false);
   const fileInputRef = useRef(null);
 
   const handlePersonalInfoChange = (e) => {
@@ -103,7 +103,8 @@ const UserSettings = () => {
   const handleDeleteAccount = async () => {
     try {
       const response = await API.post("/auth/delete-account");
-      alert(response.message);
+      
+      alert("Account Deactivated Successfully!");
       // Optionally, log the user out after deactivation
       Cookies.remove("sessionHash");
       window.location.href = "/login";
@@ -263,28 +264,28 @@ const UserSettings = () => {
             </div>
 
             <div className="bg-white shadow rounded-lg p-6">
-              <h2 className="text-2xl font-bold mb-6 text-red-600">Delete Account</h2>
+              <h2 className="text-2xl font-bold mb-6 text-red-600">Deactivate Account</h2>
               <div className="bg-red-50 p-4 rounded-md mb-4">
                 <div className="flex items-center">
                   <FiAlertTriangle className="text-red-600 mr-3" size={24} />
-                  <p className="text-red-600">This action cannot be undone. All your data will be permanently deleted.</p>
+                  <p className="text-red-600">This action cannot be undone. All your data will be deactivated.</p>
                 </div>
               </div>
               <div className="flex items-center mb-4">
                 <input
                   type="checkbox"
-                  id="deleteConfirm"
-                  checked={agreeToDelete}
-                  onChange={(e) => setAgreeToDelete(e.target.checked)}
+                  id="deactivateConfirm"
+                  checked={agreeToDeactivate}
+                  onChange={(e) => setagreeToDeactivate(e.target.checked)}
                   className="h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded"
                 />
-                <label htmlFor="deleteConfirm" className="ml-2 text-gray-700">
-                  I understand that this action is irreversible
+                <label htmlFor="deactivateConfirm" className="ml-2 text-gray-700">
+                  I understand that this action is irreversible for a certain period of time.
                 </label>
               </div>
               <button
                 onClick={() => setShowDeleteModal(true)}
-                disabled={!agreeToDelete}
+                disabled={!agreeToDeactivate}
                 className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Delete Account
@@ -352,11 +353,11 @@ const UserSettings = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-lg max-w-md w-full p-6">
             <h3 className="text-xl font-bold mb-4">Confirm Account Deletion</h3>
-            <p className="text-gray-600 mb-4">Please type "DELETE" to confirm account deletion:</p>
+            <p className="text-gray-600 mb-4">Please type "DEACTIVATE" to confirm account deactivation:</p>
             <input
               type="text"
-              value={deleteConfirm}
-              onChange={(e) => setDeleteConfirm(e.target.value)}
+              value={deactivateConfirm}
+              onChange={(e) => setdeactivateConfirm(e.target.value)}
               className="w-full border-gray-300 rounded-md shadow-sm focus:border-red-500 focus:ring-red-500"
             />
             <div className="mt-6 flex justify-end space-x-4">
@@ -368,7 +369,7 @@ const UserSettings = () => {
               </button>
               <button
                 onClick={handleDeleteAccount}
-                disabled={deleteConfirm !== "DELETE"}
+                disabled={deactivateConfirm !== "DEACTIVATE"}
                 className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 disabled:opacity-50"
               >
                 Confirm Deletion

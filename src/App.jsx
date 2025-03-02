@@ -9,11 +9,11 @@ import Navbar from "./components/navbar";
 import Landing from "./pages/landing";
 import NotFound from "./pages/404Page";
 import ProfCont from "./pages/profcont";
-import InstaAnalytics from "./pages/instaAnalytics";
 import Calendar from "./pages/calendar";
 import Suggestions from "./pages/suggestions";
 import Dashboard from "./pages/dashboard";
 import UserSettings from "./pages/UserSettings";
+import InstagramLogin from "./pages/instalogin";
 
 const App = () => {
   return (
@@ -21,11 +21,11 @@ const App = () => {
       <Routes>
         <Route element={<Navbar />}>
           <Route path="/profile" element={<ProfCont />} />
-          <Route path="/insta-analytics" element={<InstaAnalytics />} />
+          
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/suggestions" element={<Suggestions />} />
           <Route path="/dashboard" element={<Dashboard/>}/>
-         
+          <Route path="/insta-analytics" element={<InstagramLogin />} />
           <Route path="/settings" element={<UserSettings />} />
         </Route>
         <Route path="/" element={<LoginForm />} />
@@ -37,6 +37,8 @@ const App = () => {
         <Route path='/ini' element={<Ini/>}/>
         <Route path='/landing' element={<Landing/>}/>
         <Route path="*" element={<NotFound />} />
+        
+        
         
         
         
