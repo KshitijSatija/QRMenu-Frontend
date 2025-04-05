@@ -65,7 +65,7 @@ const ContactSection = () => {
           Contact sales
         </h2>
         <p className="mt-2 text-lg/8 text-gray-600">
-          We will be in touch with you shortly.
+          Fill the form and we will be in touch with you shortly.
         </p>
       </div>
 

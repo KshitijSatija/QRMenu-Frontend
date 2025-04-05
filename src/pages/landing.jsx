@@ -152,7 +152,7 @@ export default function Example() {
 
       {/* HERO Section */}
       <main>
-        <div className="relative py-24 sm:py-32 z-10">
+        <div className="relative top-15 py-24 sm:py-32 z-10">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
               QR Menus for Modern Dining
@@ -175,7 +175,7 @@ export default function Example() {
         </div>
 
         {/* How it works */}
-        <section id="how-it-works" className="relative py-24 sm:py-32 z-10">
+        <section id="how-it-works" className="relative top-10 py-24 sm:py-32 z-10">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:text-center">
               <h2 className="text-base font-semibold leading-7 text-indigo-600">How it works</h2>
@@ -233,12 +233,7 @@ export default function Example() {
         </section>
 
         {/* Testimonials */}
-        <section id="testimonials" className="relative py-24 z-10">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Loved by restaurant owners</h2>
-            <p className="mt-4 text-lg text-gray-600">See what others are saying about the platform.</p>
-          </div>
-        </section>
+        
         <section id="form">
         <ContactForm/>
         </section>
