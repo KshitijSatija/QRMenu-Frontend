@@ -146,10 +146,11 @@ const MenuDashboard = () => {
         <h1 className="text-3xl font-bold mb-8">Menu Dashboard</h1>
 
         <div className="mb-6">
-          <label className="block mb-2 font-semibold">Restaurant Username:</label>
+          <label className="block mb-2 font-semibold">Restaurant Menu Url:</label>
           <input
             type="text"
-            value={restaurantName}
+            value={`https://qrmenu-22bbs0041.vercel.app/restaurant/${restaurantName}`}
+
             disabled
             className="p-2 border rounded-md w-full bg-gray-100 cursor-not-allowed"
           />
