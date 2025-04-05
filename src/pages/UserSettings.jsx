@@ -100,6 +100,15 @@ const UserSettings = () => {
     }
   };
 
+  const handleDeleteOTP = async () => {
+    try {
+      response=await API.post("/auth/delete-otp");
+
+    }catch(error){
+      setMessage(error.response?.data?.messasge);
+    }
+  };
+  
   const handleDeleteAccount = async () => {
     try {
       const response = await API.post("/auth/delete-account");

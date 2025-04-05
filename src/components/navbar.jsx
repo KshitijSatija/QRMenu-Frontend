@@ -48,7 +48,7 @@ const Navbar = () => {
     <div className="min-h-screen bg-gray-50 flex">
       <div className="w-64 bg-white shadow-lg">
         <div className="p-4">
-          <img src={Logo} alt="Focus Bias Logo" className="h-10 w-auto" />
+          <h1 className="">Food Cart</h1>
         </div>
         <nav className="mt-6">
           <div className="px-4 space-y-2">
@@ -62,41 +62,25 @@ const Navbar = () => {
               <span>Dashboard</span>
             </a>
             <a
-              href="/profile"
+              href="/menu-dashboard"
               className={`flex items-center space-x-2 p-3 rounded-lg ${
-                location.pathname === "/profile" ? "bg-blue-50 text-blue-600" : "hover:bg-gray-50"
-              }`}
-            >
-              <FaUser />
-              <span>Profile</span>
-            </a>
-            <a
-              href="/insta-analytics"
-              className={`flex items-center space-x-2 p-3 rounded-lg ${
-                location.pathname === "/insta-analytics" ? "bg-blue-50 text-blue-600" : "hover:bg-gray-50"
-              }`}
-            >
-              <FaChartLine />
-              <span>Instagram Analytics</span>
-            </a>
-            <a
-              href="/calendar"
-              className={`flex items-center space-x-2 p-3 rounded-lg ${
-                location.pathname === "/calendar" ? "bg-blue-50 text-blue-600" : "hover:bg-gray-50"
-              }`}
-            >
-              <FaCalendar />
-              <span>Calendar</span>
-            </a>
-            <a
-              href="/suggestions"
-              className={`flex items-center space-x-2 p-3 rounded-lg ${
-                location.pathname === "/suggestions" ? "bg-blue-50 text-blue-600" : "hover:bg-gray-50"
+                location.pathname === "/menu-dashboard" ? "bg-blue-50 text-blue-600" : "hover:bg-gray-50"
               }`}
             >
               <FaTasks />
-              <span>Suggestions</span>
+              <span>Menu Section</span>
             </a>
+            <a
+              href="/menu-logs"
+              className={`flex items-center space-x-2 p-3 rounded-lg ${
+                location.pathname === "/menu-logs" ? "bg-blue-50 text-blue-600" : "hover:bg-gray-50"
+              }`}
+            >
+              <FaChartLine />
+              <span>Change Logs</span>
+            </a>
+            
+            
           </div>
         </nav>
       </div>
@@ -119,9 +103,9 @@ const Navbar = () => {
                 <FaCog className="text-gray-600" />
               </button>
               <button
-                onClick={() => navigate("/profile")}
+                onClick={() => navigate("/dashboard")}
                 className={`flex items-center space-x-2 p-3 rounded-full ${
-                  location.pathname === "/profile" ? "bg-blue-50 text-blue-600" : "hover:bg-gray-100"
+                  location.pathname === "/dashboard" ? "bg-blue-50 text-blue-600" : "hover:bg-gray-100"
                 }`}
               >
                 <FaUserCircle className="text-gray-600" />
