@@ -4,7 +4,8 @@ import { useState } from 'react'
 import { Dialog, DialogPanel,Field, Label, Switch } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import ContactForm from "../components/contactForm";
-import { ChevronDownIcon } from '@heroicons/react/16/solid'
+import { ChevronDownIcon } from '@heroicons/react/16/solid';
+import Logo from "../assets/qrlogo.svg";
 const navigation = [
   { name: 'How it works', href: '#how-it-works' },
   
@@ -73,8 +74,8 @@ export default function Example() {
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">QRMenu</span>
               <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+                className="h-20 w-auto"
+                src={Logo}
                 alt="QRMenu Logo"
               />
             </a>
@@ -108,8 +109,8 @@ export default function Example() {
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">QRMenu</span>
                 <img
-                  className="h-8 w-auto"
-                  src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+                  className="h-15 w-auto"
+                  src={Logo}
                   alt="QRMenu Logo"
                 />
               </a>
@@ -140,7 +141,7 @@ export default function Example() {
                     href="/login"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-gray-900 hover:bg-gray-50"
                   >
-                    Log in
+                    Dashboard
                   </a>
                 </div>
               </div>

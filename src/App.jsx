@@ -44,7 +44,7 @@ const App = () => {
         </Route>
         <Route path="/restaurant/:restaurantName" element={<PublicMenuLanding />} />
         <Route path="/restaurant/:restaurantName/category/:categoryId" element={<CategoryDetails />} />
-        <Route path="/" element={<LoginForm />} />
+        <Route path="/" element={<Landing />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />
         

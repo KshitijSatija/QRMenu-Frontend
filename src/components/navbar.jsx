@@ -3,7 +3,7 @@ import { useNavigate, useLocation, Outlet} from "react-router-dom";
 import API from "../api/api"; 
 import Cookies from "js-cookie";
 import { FaSpinner, FaUser, FaBell, FaCog, FaSignOutAlt, FaEdit, FaChartLine, FaCalendar, FaTasks, FaUserCircle } from "react-icons/fa";
-import Logo from "../assets/fbbb.svg";
+import Logo from "../assets/qrlogo.svg";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -47,8 +47,8 @@ const Navbar = () => {
   return (
     <div className="min-h-screen bg-gray-50 flex">
       <div className="w-64 bg-white shadow-lg">
-        <div className="p-4">
-          <h1 className="">Food Cart</h1>
+        <div className="p-4 flex justify-center">
+          <img src={Logo} alt="QRMenuLogo" className="w-20 h-20" />
         </div>
         <nav className="mt-6">
           <div className="px-4 space-y-2">

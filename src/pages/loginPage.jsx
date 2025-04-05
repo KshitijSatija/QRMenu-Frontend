@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import API from "../api/api";
 import Cookies from "js-cookie";
 import LightButton from "../LightButton";
-
+import Logo from "../assets/qrlogo.svg";
 const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -269,7 +269,7 @@ const LoginForm = () => {
 
           <div className="w-full h-full flex items-center bg-[#000842] rounded-xl p-8">
             <img
-              src="https://readymadeui.com/signin-image.webp"
+              src={Logo}
               className="w-full aspect-[12/12] object-contain"
               alt="login-image"
             />
