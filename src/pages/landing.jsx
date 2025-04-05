@@ -211,7 +211,7 @@ export default function Example() {
               <div className="rounded-xl bg-white bg-opacity-90 shadow-lg p-8 w-full max-w-sm">
                 <h3 className="text-2xl font-semibold text-gray-900">Starter</h3>
                 <p className="mt-4 text-gray-600">Perfect for small cafes & food trucks.</p>
-                <p className="mt-6 text-4xl font-bold text-gray-900">$20<span className="text-base font-medium">/mo</span></p>
+                <p className="mt-6 text-4xl font-bold text-gray-900">₹1199<span className="text-base font-medium">/mo</span></p>
                 <ul className="mt-6 text-sm text-gray-600 space-y-2 text-left">
                   <li>✔ 1 Menu</li>
                   <li>✔ 50 items</li>
@@ -221,7 +221,7 @@ export default function Example() {
               <div className="rounded-xl bg-indigo-600 text-white shadow-xl p-8 w-full max-w-sm">
                 <h3 className="text-2xl font-semibold">Pro</h3>
                 <p className="mt-4">For growing restaurants & chains.</p>
-                <p className="mt-6 text-4xl font-bold">$18<span className="text-base font-medium">/mo X number of QR's</span></p>
+                <p className="mt-6 text-4xl font-bold">₹999<span className="text-base font-medium">/mo X number of QR's</span></p>
                 <ul className="mt-6 text-sm space-y-2 text-left">
                   <li>✔ Unlimited menus</li>
                   <li>✔ Menu analytics</li>

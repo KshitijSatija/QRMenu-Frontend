@@ -4,7 +4,7 @@ import LoginForm from "./pages/loginPage";
 import LightButton from "./LightButton";
 import RegisterForm from "./pages/registerPage";
 import Navbar from "./components/navbar";
-import NotFound from "./pages/404Page";
+import NotFound from "./components/404Page";
 import Dashboard from "./pages/dashboard";
 import UserSettings from "./pages/UserSettings";
 import MenuDashboard from "./pages/MenuDashboard";
@@ -16,6 +16,7 @@ import MenuLogs from "./pages/MenuLogs";
 import Landing from "./pages/landing";
 
 import ContactSection from "./components/contactForm";
+import UnderDev from "./components/underDev";
 /*
 
 import Landing from "./pages/landing_old";
@@ -47,6 +48,7 @@ const App = () => {
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />
+        <Route path="/under-development" element={<UnderDev />} />
         
         <Route path="/light" element={<LightButton />} />
         <Route path='/landing' element={<Landing/>}/>
