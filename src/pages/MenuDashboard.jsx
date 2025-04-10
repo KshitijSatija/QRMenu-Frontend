@@ -30,7 +30,7 @@ const MenuDashboard = () => {
         const { _id, sections, displayMode, restaurantName, displayName, logo, backgroundType, backgroundValue, backgroundImage, socialLinks } = menuResponse.data;
         setRestaurantName(restaurantName);
         setDisplayName(displayName || restaurantName); // Set displayName, fallback to restaurantName
-        setMenuURL(`https://yourwebsite.com/restaurant/${restaurantName}`);
+        setMenuURL(`https://qrmenu-22bbs0041.vercel.app/restaurant/${restaurantName}`);
         setSections(sections || [{ title: '', items: [{ name: '', description: '', price: '' }] }]);
         setDisplayMode(displayMode || 'stacked');
         setMenuId(_id);
